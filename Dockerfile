@@ -1,6 +1,15 @@
 FROM ubuntu:20.04
 
-ARG APT_SOURCE=mirror://mirrors.ubuntu.com/mirrors.txt
+# You can use this build argument to change the APT cache source list,
+# it might be a good idea to use "mirrors://mirrors.ubuntu.com/mirrors.txt"
+# since it can pick the fastest mirror closer to your location based on DNS.
+# You can also choose manually from the mirror list, and define it here to
+# replace the default one.
+#
+# docker build \
+#   --build-arg APT_SOURCE=mirrors://mirrors.ubuntu.com/mirrors.txt
+#   -t deploy-utils .
+ARG APT_SOURCE=http://archive.ubuntu.com/ubuntu
 
 RUN \
   #
@@ -14,7 +23,18 @@ RUN \
   #
   # Install development tools
   #
-  apt-get install -y curl zip unzip build-essential automake aufs-tools gcc g++ make && \
+  apt-get install -y \
+  curl \
+  zip \
+  unzip \
+  build-essential \
+  automake \
+  aufs-tools \
+  gcc \
+  g++ \
+  make \
+  lsb-release \
+  && \
   #
   # Install NodeJS
   #

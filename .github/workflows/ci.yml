@@ -10,7 +10,7 @@ env:
 
 jobs:
   docker:
-    name: Release Docker Container
+    name: Docker Container CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
