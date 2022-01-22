@@ -51,8 +51,7 @@ RUN \
   #
   npm install -g npm@latest && \
   npm install -g yarn && \
-  npm install -g netlify-cli && \
-  npm install -g vercel && \
+  npm install -g netlify-cli@8.12.0 && \
   #
   # Install Golang from Source
   #
