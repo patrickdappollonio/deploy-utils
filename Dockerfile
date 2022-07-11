@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # You can use this build argument to change the APT cache source list,
 # it might be a good idea to use "mirrors://mirrors.ubuntu.com/mirrors.txt"
